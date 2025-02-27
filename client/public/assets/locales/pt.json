@@ -84,8 +84,8 @@
     }
   },
   "page": {
-    "overview": "Overview",
-    "statistics": "Statistics"
+    "overview": "Visão geral",
+    "statistics": "Estatísticas"
   },
   "update": {
     "ping_title": "Definir pingue ótimo (ms)",
