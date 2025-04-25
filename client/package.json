@@ -15,7 +15,7 @@
     "@vitejs/plugin-react": "^4.4.1",
     "chart.js": "^4.4.9",
     "cron-parser": "^5.1.1",
-    "i18next": "^24.2.3",
+    "i18next": "^25.0.1",
     "i18next-browser-languagedetector": "^8.0.5",
     "i18next-http-backend": "^3.0.2",
     "react": "^19.1.0",
