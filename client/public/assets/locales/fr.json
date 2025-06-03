@@ -84,8 +84,8 @@
     }
   },
   "page": {
-    "overview": "Overview",
-    "statistics": "Statistics"
+    "overview": "Vue d'ensemble",
+    "statistics": "Statistiques"
   },
   "update": {
     "ping_title": "Définir le ping optimal (ms)",
