@@ -20,7 +20,7 @@ function LatestTestComponent() {
     const config = useContext(ConfigContext)[0];
 
     useEffect(() => {
-        setLatest(Object.keys(speedtests).length !== 0 ? speedtests[0] : {ping: "N/A", download: "N/A", upload: "N/A"});
+        setLatest(speedtests.length !== 0 ? speedtests[0] : {ping: "N/A", download: "N/A", upload: "N/A"});
     }, [speedtests]);
 
     useEffect(() => {
