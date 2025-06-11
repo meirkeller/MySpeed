@@ -9,14 +9,26 @@ body, html
   font-weight: 700
 
 ::-webkit-scrollbar
-  width: 13px
+  width: 14px
+  background: $background
+
+::-webkit-scrollbar-track
+  background: $background
+  border-radius: 10px
+  margin: 5px
 
 ::-webkit-scrollbar-thumb
-  background: $darker-gray
+  background: $light-gray
   border-radius: 10px
+  border: 2px solid $background
+  min-height: 40px
 
 ::-webkit-scrollbar-thumb:hover
-  background: $dark-gray
+  background: $white
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3)
+
+::-webkit-scrollbar-thumb:active
+  background: $subtext
 
 .speedtest-icon
   font-size: 26pt
