@@ -65,12 +65,6 @@
     "integrations": "Entegrasyonlar"
   },
   "options": {
-    "time": {
-      "24hours": "24 saat (standart)",
-      "2days": "2 gün (toplam)",
-      "7days": "7 gün (ortalama)",
-      "30days": "30 gün (ortalama)"
-    },
     "cron": {
       "continuous": "Sürekli (her dakika)",
       "frequent": "Çok sık (her 30 dakikada bir)",
@@ -201,6 +195,8 @@
   "test": {
     "not_available": "Şu anda kullanılabilir test yok",
     "no_latest": "Şu anda geçerli bir test yok. Lütfen bir test yapın veya bir sonraki testin yapılmasını bekleyin.",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "Bilinmeyen hata:",
     "failed": "Test başarısız oldu",
     "recheck": "Bu durum sık sık yaşanıyorsa, mümkün oldukça kontrol edin.",
