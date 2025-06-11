@@ -65,12 +65,6 @@
     "integrations": "Intégrations"
   },
   "options": {
-    "time": {
-      "24hours": "24 heures (par défaut)",
-      "2days": "2 jours (total)",
-      "7days": "7 jours (moyenne)",
-      "30days": "30 jours (moyenne)"
-    },
     "cron": {
       "continuous": "Continue (toutes les minutes)",
       "frequent": "Très souvent (toutes les 30 minutes)",
@@ -201,6 +195,8 @@
   "test": {
     "not_available": "Il n'y a actuellement aucun type disponible",
     "no_latest": "Il n'y a pas de test actuellement disponible. Veuillez effectuer un test ou attendre que le prochain test soit effectué.",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "Erreur inconnue :",
     "failed": "Échec du Test",
     "recheck": "Veuillez vérifier autant que possible si cela se produit souvent.",
