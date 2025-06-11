@@ -55,6 +55,56 @@
     span
       font-size: 13px
 
+  .back-to-top-button
+    bottom: 20px
+    left: 20px
+    width: 48px
+    height: 48px
+    
+    svg
+      width: 20px
+      height: 20px
+
 @media (max-width: 475px)
   .error-text
     width: 20rem
+
+.back-to-top-button
+  position: fixed
+  bottom: 30px
+  left: 30px
+  z-index: 50
+  width: 56px
+  height: 56px
+  background: $dark-gray
+  backdrop-filter: blur(10px)
+  border: $light-gray 2px solid
+  border-radius: 50%
+  color: $white
+  cursor: pointer
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0 0 15px rgba($light-gray, 0.5)
+  transition: all 0.3s ease
+  animation: slideInUp 0.3s ease-out
+  
+  &:hover
+    transform: translateY(-3px)
+    box-shadow: 0 4px 20px rgba($light-gray, 0.7)
+    background: $light-gray
+    
+  &:active
+    transform: translateY(-1px)
+    
+  svg
+    width: 24px
+    height: 24px
+    
+@keyframes slideInUp
+  from
+    opacity: 0
+    transform: translateY(20px)
+  to
+    opacity: 1
+    transform: translateY(0)
