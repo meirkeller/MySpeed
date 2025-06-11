@@ -60,6 +60,10 @@
     "pause_tests": "Pauzetests",
     "resume_tests": "Doorgaan met testen",
     "language": "Taal wijzigen",
+    "light_mode": "Light mode",
+    "dark_mode": "Dark mode",
+    "theme_switched_light": "Switched to light mode",
+    "theme_switched_dark": "Switched to dark mode",
     "info": "Info over het project",
     "provider": "Over de provider",
     "integrations": "Integraties"
@@ -385,5 +389,8 @@
         "send_config_updates": "Configuratie-updates verzenden"
       }
     }
+  },
+  "common": {
+    "back_to_top": "Back to top"
   }
 }
