@@ -65,12 +65,6 @@
     "integrations": "Integraties"
   },
   "options": {
-    "time": {
-      "24hours": "24 uur (standaard)",
-      "2days": "2 dagen (totaal)",
-      "7days": "7 dagen (gemiddeld)",
-      "30days": "30 dagen (gemiddeld)"
-    },
     "cron": {
       "continuous": "Continu (elke minuut)",
       "frequent": "Zeer vaak (elke 30 minuten)",
@@ -201,6 +195,8 @@
   "test": {
     "not_available": "Er zijn momenteel geen tests beschikbaar",
     "no_latest": "Er is geen huidige test. Voer een test uit of wacht tot de volgende test is uitgevoerd.",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "Onbekende fout:",
     "failed": "Test mislukt",
     "recheck": "Controleer voor zover mogelijk of dit vaker gebeurt.",
