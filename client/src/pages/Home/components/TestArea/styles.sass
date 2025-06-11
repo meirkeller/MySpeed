@@ -1,5 +1,42 @@
 @use "@/common/styles/colors" as *
 
+.floating-date-indicator
+  position: fixed
+  user-select: none
+  top: 30px
+  display: flex
+  transform: translateX(-50%)
+  left: 50%
+  z-index: 50
+  background: $dark-gray
+  backdrop-filter: blur(10px)
+  border: $light-gray 2px solid
+  border-radius: 12px
+  padding: 12px 24px
+  text-align: center
+  font-weight: 600
+  color: $white
+  box-shadow: 0 0 15px rgba($light-gray, 0.5)
+  animation: slideInDown 0.3s ease-out
+
+  span
+    font-size: 22px
+    letter-spacing: 0.5px
+
+@keyframes slideInDown
+  from
+    opacity: 0
+    transform: translateX(-50%) translateY(-20px)
+  to
+    opacity: 1
+    transform: translateX(-50%) translateY(0)
+
+.loading-more, .end-of-list
+  text-align: center
+  padding: 20px
+  color: $subtext
+  font-style: italic
+
 .error-text
   margin: 0
   font-size: 26pt
@@ -10,6 +47,13 @@
 @media (max-width: 605px)
   .error-text
     width: 28rem
+    
+  .floating-date-indicator
+    top: 15px
+    padding: 10px 20px
+    
+    span
+      font-size: 13px
 
 @media (max-width: 475px)
   .error-text

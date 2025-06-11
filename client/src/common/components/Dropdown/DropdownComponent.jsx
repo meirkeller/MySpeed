@@ -3,7 +3,6 @@ import "./styles.sass";
 import {
     faArrowDown,
     faArrowUp,
-    faCalendarDays,
     faCircleNodes,
     faClock,
     faGlobeEurope,
@@ -19,10 +18,9 @@ import {
 import {ConfigContext} from "@/common/contexts/Config";
 import {StatusContext} from "@/common/contexts/Status";
 import {InputDialogContext} from "@/common/contexts/InputDialog";
-import {SpeedtestContext} from "@/common/contexts/Speedtests";
 import {baseRequest, jsonRequest, patchRequest, postRequest} from "@/common/utils/RequestUtil";
 import {creditsInfo, recommendationsInfo} from "@/common/components/Dropdown/utils/infos";
-import {levelOptions, selectOptions, timeOptions} from "@/common/components/Dropdown/utils/options";
+import {levelOptions, selectOptions} from "@/common/components/Dropdown/utils/options";
 import {parseCron, stringifyCron} from "@/common/components/Dropdown/utils/utils";
 import {t} from "i18next";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
@@ -39,7 +37,6 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
     const findNode = useContext(NodeContext)[4];
     const updateNodes = useContext(NodeContext)[1];
     const currentNode = useContext(NodeContext)[2];
-    const updateTests = useContext(SpeedtestContext)[1];
     const updateToast = useContext(ToastNotificationContext);
     const [setDialog] = useContext(InputDialogContext);
     const [showIntegrationDialog, setShowIntegrationDialog] = useState(false);
@@ -160,20 +157,6 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
         description: <>{t("update.cron_next_test")} <span className="dialog-value">{parseCron(value)}</span></>
     }), (val) => stringifyCron(val));
 
-    const updateTime = async () => {
-        setDialog({
-            title: t("update.time_title"),
-            select: true,
-            selectOptions: timeOptions(),
-            value: localStorage.getItem("testTime") || 1,
-            onSuccess: value => {
-                localStorage.setItem("testTime", value);
-                updateTests();
-                showFeedback(undefined, false);
-            }
-        });
-    }
-
     const togglePause = () => {
         if (!status.paused) {
             setDialog({
@@ -206,7 +189,6 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
         {run: () => setShowIntegrationDialog(true), icon: faCircleNodes, text: t("dropdown.integrations")},
         {hr: true, key: 2},
         {run: () => setShowLanguageDialog(true), icon: faGlobeEurope, text: t("dropdown.language"), allowView: true},
-        {run: updateTime, icon: faCalendarDays, text: t("dropdown.time"), allowView: true},
         {run: showCredits, icon: faInfo, text: t("dropdown.info"), allowView: true, previewHidden: true},
         {run: showProviderDetails, icon: faInfo, text: t("dropdown.provider"), previewShown: true}
     ];
