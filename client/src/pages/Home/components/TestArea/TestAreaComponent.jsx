@@ -6,12 +6,15 @@ import Speedtest from "../Speedtest";
 import {getIconBySpeed} from "@/common/utils/TestUtil";
 import "./styles.sass";
 import {t} from "i18next";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faArrowUp} from "@fortawesome/free-solid-svg-icons";
 
 const TestArea = () => {
     const config = useContext(ConfigContext)[0];
     const {speedtests, loadMoreTests, loading, hasMore} = useContext(SpeedtestContext);
     const [stickyDate, setStickyDate] = useState(null);
     const [showStickyDate, setShowStickyDate] = useState(false);
+    const [showBackToTop, setShowBackToTop] = useState(false);
     const [initialLoadComplete, setInitialLoadComplete] = useState(false);
     const containerRef = useRef();
     const lastElementRef = useRef();
@@ -39,6 +42,9 @@ const TestArea = () => {
 
         const shouldShow = scrollTop > 50;
         setShowStickyDate(shouldShow);
+
+        const shouldShowBackToTop = scrollTop > 300;
+        setShowBackToTop(shouldShowBackToTop);
 
         const windowHeight = window.innerHeight;
         const documentHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight,
@@ -70,6 +76,12 @@ const TestArea = () => {
             }
         }
     }, [speedtests, stickyDate, hasMore, loading, loadMoreTests]);
+
+    const scrollToTop = useCallback(() => {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+        document.documentElement.scrollTo({top: 0, behavior: 'smooth'});
+        document.body.scrollTo({top: 0, behavior: 'smooth'});
+    }, []);
 
     useEffect(() => {
         let ticking = false;
@@ -122,6 +134,11 @@ const TestArea = () => {
                 <div className="floating-date-indicator">
                     <span>{stickyDate}</span>
                 </div>, document.body)}
+
+            {showBackToTop && createPortal(
+                <button className="back-to-top-button" onClick={scrollToTop} aria-label={t("common.back_to_top")}>
+                    <FontAwesomeIcon icon={faArrowUp}/>
+                </button>, document.body)}
 
             <div className="speedtest-area" ref={containerRef}>
                 {speedtests.map((test, index) => {

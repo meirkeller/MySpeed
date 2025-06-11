@@ -389,5 +389,8 @@
         "send_config_updates": "Send configuration updates"
       }
     }
+  },
+  "common": {
+    "back_to_top": "Back to top"
   }
 }
