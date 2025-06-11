@@ -60,6 +60,10 @@
     "pause_tests": "Mettre en pause les tests",
     "resume_tests": "Reprendre les tests",
     "language": "Changer de langue",
+    "light_mode": "Light mode",
+    "dark_mode": "Dark mode",
+    "theme_switched_light": "Switched to light mode",
+    "theme_switched_dark": "Switched to dark mode",
     "info": "À propos du projet",
     "provider": "A propos du fournisseur",
     "integrations": "Intégrations"
@@ -385,5 +389,8 @@
         "send_config_updates": "Envoyer les mises à jour de configuration"
       }
     }
+  },
+  "common": {
+    "back_to_top": "Back to top"
   }
 }
