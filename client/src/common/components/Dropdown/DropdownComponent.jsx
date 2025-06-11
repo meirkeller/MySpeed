@@ -18,7 +18,6 @@ import {
 import {ConfigContext} from "@/common/contexts/Config";
 import {StatusContext} from "@/common/contexts/Status";
 import {InputDialogContext} from "@/common/contexts/InputDialog";
-import {SpeedtestContext} from "@/common/contexts/Speedtests";
 import {baseRequest, jsonRequest, patchRequest, postRequest} from "@/common/utils/RequestUtil";
 import {creditsInfo, recommendationsInfo} from "@/common/components/Dropdown/utils/infos";
 import {levelOptions, selectOptions} from "@/common/components/Dropdown/utils/options";
@@ -38,7 +37,6 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
     const findNode = useContext(NodeContext)[4];
     const updateNodes = useContext(NodeContext)[1];
     const currentNode = useContext(NodeContext)[2];
-    const updateTests = useContext(SpeedtestContext)[1];
     const updateToast = useContext(ToastNotificationContext);
     const [setDialog] = useContext(InputDialogContext);
     const [showIntegrationDialog, setShowIntegrationDialog] = useState(false);
