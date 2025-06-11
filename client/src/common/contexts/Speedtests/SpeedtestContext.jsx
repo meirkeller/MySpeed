@@ -94,6 +94,16 @@ export const SpeedtestProvider = (props) => {
         }
     }, [speedtests]);
 
+    const deleteTest = useCallback((id) => {
+        setSpeedtests(prev => prev.filter(test => test.id !== id));
+        if (speedtests.length === 1) {
+            setLastId(null);
+            setHasMore(false);
+        } else if (speedtests[speedtests.length - 1].id === id) {
+            setLastId(speedtests[speedtests.length - 2].id);
+        }
+    });
+
     const updateTests = useCallback(() => {
         refreshTests();
     }, [refreshTests]);
@@ -111,7 +121,7 @@ export const SpeedtestProvider = (props) => {
     }, [refreshTests]);
 
     return (
-        <SpeedtestContext.Provider value={[speedtests, updateTests, loadMoreTests, loading, hasMore]}>
+        <SpeedtestContext.Provider value={{speedtests, updateTests, deleteTest, loadMoreTests, loading, hasMore}}>
             {props.children}
         </SpeedtestContext.Provider>
     )
