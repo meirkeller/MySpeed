@@ -13,11 +13,16 @@ import {
     faPlay,
     faWandMagicSparkles,
     faCheck,
-    faExclamationTriangle, faSliders, faHardDrive
+    faExclamationTriangle, 
+    faSliders, 
+    faHardDrive,
+    faMoon,
+    faSun
 } from "@fortawesome/free-solid-svg-icons";
 import {ConfigContext} from "@/common/contexts/Config";
 import {StatusContext} from "@/common/contexts/Status";
 import {InputDialogContext} from "@/common/contexts/InputDialog";
+import {ThemeContext} from "@/common/contexts/Theme";
 import {baseRequest, jsonRequest, patchRequest, postRequest} from "@/common/utils/RequestUtil";
 import {creditsInfo, recommendationsInfo} from "@/common/components/Dropdown/utils/infos";
 import {levelOptions, selectOptions} from "@/common/components/Dropdown/utils/options";
@@ -34,6 +39,7 @@ import StorageDialog from "@/common/components/StorageDialog";
 const DropdownComponent = ({isOpen, switchDropdown}) => {
     const [config, reloadConfig] = useContext(ConfigContext);
     const [status, updateStatus] = useContext(StatusContext);
+    const [isDarkMode, toggleTheme] = useContext(ThemeContext);
     const findNode = useContext(NodeContext)[4];
     const updateNodes = useContext(NodeContext)[1];
     const currentNode = useContext(NodeContext)[2];
@@ -175,6 +181,11 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
 
     const showProviderDetails = () => setDialog({title: t("dropdown.provider"), description: config.previewMessage, buttonText: t("dialog.close")});
 
+    const handleThemeToggle = () => {
+        toggleTheme();
+        updateToast(t(isDarkMode ? "dropdown.theme_switched_light" : "dropdown.theme_switched_dark"), "green", isDarkMode ? faSun : faMoon);
+    };
+
     const options = [
         {run: updatePing, icon: faPingPongPaddleBall, text: t("dropdown.ping")},
         {run: updateUpload, icon: faArrowUp, text: t("dropdown.upload")},
@@ -188,6 +199,7 @@ const DropdownComponent = ({isOpen, switchDropdown}) => {
         {run: togglePause, icon: status.paused ? faPlay : faPause, text: t("dropdown." + (status.paused ? "resume_tests" : "pause_tests"))},
         {run: () => setShowIntegrationDialog(true), icon: faCircleNodes, text: t("dropdown.integrations")},
         {hr: true, key: 2},
+        {run: handleThemeToggle, icon: isDarkMode ? faSun : faMoon, text: t(isDarkMode ? "dropdown.light_mode" : "dropdown.dark_mode"), allowView: true},
         {run: () => setShowLanguageDialog(true), icon: faGlobeEurope, text: t("dropdown.language"), allowView: true},
         {run: showCredits, icon: faInfo, text: t("dropdown.info"), allowView: true, previewHidden: true},
         {run: showProviderDetails, icon: faInfo, text: t("dropdown.provider"), previewShown: true}
