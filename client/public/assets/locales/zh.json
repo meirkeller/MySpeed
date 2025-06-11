@@ -65,12 +65,6 @@
     "integrations": "集成"
   },
   "options": {
-    "time": {
-      "24hours": "24小时 (标准)",
-      "2days": "2天 (共计)",
-      "7days": "7天 (平均)",
-      "30days": "30天 (平均)"
-    },
     "cron": {
       "continuous": "连续 (每分钟)",
       "frequent": "非常频繁 (每30分钟一次)",
@@ -201,6 +195,8 @@
   "test": {
     "not_available": "目前没有任何测试",
     "no_latest": "当前没有测试。请执行一个测试或等到下一个测试完成。",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "未知错误：",
     "failed": "测试失败",
     "recheck": "如果这种情况经常发生，请尽可能地检查。",
