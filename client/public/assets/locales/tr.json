@@ -60,6 +60,10 @@
     "pause_tests": "Testleri duraklat",
     "resume_tests": "Testlere devam et",
     "language": "Dili değiştir",
+    "light_mode": "Light mode",
+    "dark_mode": "Dark mode",
+    "theme_switched_light": "Switched to light mode",
+    "theme_switched_dark": "Switched to dark mode",
     "info": "Proje hakkında bilgi",
     "provider": "Sağlayıcı hakkında",
     "integrations": "Entegrasyonlar"
@@ -385,5 +389,8 @@
         "send_config_updates": "Yapılandırma güncellemelerini gönder"
       }
     }
+  },
+  "common": {
+    "back_to_top": "Back to top"
   }
 }
