@@ -114,7 +114,7 @@
     "view_title": "Zmień widok"
   },
   "header": {
-    "title": "MojaPrędkość",
+    "title": "MySpeed",
     "running_tooltip": "Test prędkości w trakcie",
     "start_tooltip": "Uruchom test prędkości",
     "new_update": "Aktualizacja dostępna",
@@ -357,7 +357,7 @@
       }
     },
     "healthChecks": {
-      "title": "KontroleZdrowia",
+      "title": "HealthChecks",
       "fields": {
         "url": "URL HealthChecks",
         "url_placeholder": "https://hc-ping.com/<uuid>"
@@ -389,7 +389,7 @@
         "send_config_updates": "Wyślij aktualizacje konfiguracji"
       }
     }
-  },
+
   "common": {
     "back_to_top": "Back to top"
   }

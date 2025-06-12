@@ -1,9 +1,10 @@
-@import "@/common/styles/colors"
+@use "@/common/styles/colors" as *
 
 .dropdown
   visibility: visible
   opacity: 1
-  transition: opacity 0.1s linear
+  transition: all 0.15s ease-in-out
+  transform: translateX(0) translateY(0) scale(1)
   user-select: none
 
 .dropdown-content
@@ -14,7 +15,8 @@
   width: auto
   overflow: auto
   border-radius: 10px
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+  box-shadow: 0 8px 16px 0 $dark-gray
+  border: 1px solid $light-gray
   right: 0
   z-index: 1
   padding: 15px
@@ -23,14 +25,15 @@
 .dropdown-invisible
   visibility: hidden
   opacity: 0
-  transition: visibility 0s 0.1s, opacity 0.1s linear
+  transform: translateX(20px) translateY(-10px) scale(0.98)
 
 .dropdown-content h2
-  color: $darker-white
+  color: $subtext
   margin: 0
   font-size: 16pt
 
 .dropdown-hr
+  border: 1px solid $light-gray
   margin: 5px
   width: 30px
 
@@ -52,7 +55,7 @@
   font-weight: 500
 
 .dropdown-item:hover
-    color: $green
+  color: $green
 
 .dropdown-item svg
   width: 25px
@@ -67,4 +70,4 @@
 
 @media (max-width: 390px)
   .dropdown-content
-    left: 0
+    margin-right: 0
