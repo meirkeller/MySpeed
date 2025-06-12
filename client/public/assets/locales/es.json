@@ -344,7 +344,7 @@
       }
     },
     "pushover": {
-      "title": "Presión",
+      "title": "Pushover",
       "fields": {
         "token": "App token",
         "user_key": "Clave de usuario",
@@ -377,7 +377,7 @@
       }
     },
     "webhook": {
-      "title": "Gancho web",
+      "title": "Webhook",
       "fields": {
         "url": "URL del webhook",
         "url_placeholder": "https://su-servidor.es/hook",
