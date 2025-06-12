@@ -60,10 +60,10 @@
     "pause_tests": "暂停测试",
     "resume_tests": "继续测试",
     "language": "修改语言",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "灯光模式",
+    "dark_mode": "黑暗模式",
+    "theme_switched_light": "切换到灯光模式",
+    "theme_switched_dark": "切换到黑暗模式",
     "info": "关于项目的信息",
     "provider": "关于供应商",
     "integrations": "集成"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "目前没有任何测试",
     "no_latest": "当前没有测试。请执行一个测试或等到下一个测试完成。",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "加载更多测试...",
+    "no_more_tests": "不再加载测试",
     "unknown_error": "未知错误：",
     "failed": "测试失败",
     "recheck": "如果这种情况经常发生，请尽可能地检查。",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "返回顶部"
   }
 }
