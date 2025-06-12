@@ -60,10 +60,10 @@
     "pause_tests": "Pausar tests",
     "resume_tests": "Continuar tests",
     "language": "Cambiar de idioma",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Modo luz",
+    "dark_mode": "Modo oscuro",
+    "theme_switched_light": "Conmutado a modo luz",
+    "theme_switched_dark": "Cambiar a modo oscuro",
     "info": "Información sobre el proyecto",
     "provider": "Acerca del proveedor",
     "integrations": "Integraciones"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Actualmente no hay tests disponibles",
     "no_latest": "No hay ningun test en curso. Realice un test o espere hasta que se haya realizado el siguiente.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Cargando más pruebas...",
+    "no_more_tests": "No hay que cargar más pruebas",
     "unknown_error": "Error desconocido:",
     "failed": "Test fallido",
     "recheck": "Por favor, compruebe en la medida de lo posible si esto ocurre más a menudo.",
@@ -215,15 +215,6 @@
       "description": "<Link>Este test</Link> alcanzó una velocidad de descarga máxima de <Bold>{{down}} Mbps</Bold> y una velocidad de subida máxima de <Bold>{{up}} Mbps</Bold>. Se creó <Bold>{{type}}</Bold> y tardó <Bold>{{duration}} Segundos</Bold>.",
       "from_you": "de ti",
       "automatic": "automático"
-    },
-    "tooltips": {
-      "custom": "Personalizado",
-      "average": "Media",
-      "auto": "Automático"
-    },
-    "views": {
-      "list": "Resumen",
-      "statistic": "Estadísticas"
     },
     "overview": {
       "title": "Resumen ({{amount}})",
@@ -400,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Volver arriba"
   }
 }

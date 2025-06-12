@@ -60,10 +60,10 @@
     "pause_tests": "Testleri duraklat",
     "resume_tests": "Testlere devam et",
     "language": "Dili değiştir",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Işık modu",
+    "dark_mode": "Karanlık mod",
+    "theme_switched_light": "Işık moduna geçildi",
+    "theme_switched_dark": "Karanlık moda geçildi",
     "info": "Proje hakkında bilgi",
     "provider": "Sağlayıcı hakkında",
     "integrations": "Entegrasyonlar"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Şu anda kullanılabilir test yok",
     "no_latest": "Şu anda geçerli bir test yok. Lütfen bir test yapın veya bir sonraki testin yapılmasını bekleyin.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Daha fazla test yükleniyor...",
+    "no_more_tests": "Yüklenecek başka test yok",
     "unknown_error": "Bilinmeyen hata:",
     "failed": "Test başarısız oldu",
     "recheck": "Bu durum sık sık yaşanıyorsa, mümkün oldukça kontrol edin.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Başa dön"
   }
 }

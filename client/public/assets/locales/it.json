@@ -60,10 +60,10 @@
     "pause_tests": "Test di pausa",
     "resume_tests": "Continua i test",
     "language": "Cambiare la lingua",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Modalità luce",
+    "dark_mode": "Modalità scura",
+    "theme_switched_light": "Passato alla modalità luce",
+    "theme_switched_dark": "Passa alla modalità scura",
     "info": "Informazioni sul progetto",
     "provider": "Informazioni sul fornitore",
     "integrations": "Integrazioni"
@@ -82,8 +82,8 @@
     }
   },
   "page": {
-    "overview": "Overview",
-    "statistics": "Statistics"
+    "overview": "Panoramica",
+    "statistics": "Statistiche"
   },
   "update": {
     "ping_title": "Impostazione del ping ottimale (ms)",
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Al momento non sono disponibili test",
     "no_latest": "Non c'è nessun test in corso. Eseguire un test o attendere l'esecuzione del test successivo.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Caricamento di altri test...",
+    "no_more_tests": "Non ci sono più test da caricare",
     "unknown_error": "Errore sconosciuto:",
     "failed": "Test fallito",
     "recheck": "Si prega di controllare il più possibile se ciò accade più spesso.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Torna all'inizio"
   }
 }
