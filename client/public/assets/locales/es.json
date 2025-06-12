@@ -216,15 +216,6 @@
       "from_you": "de ti",
       "automatic": "automático"
     },
-    "tooltips": {
-      "custom": "Personalizado",
-      "average": "Media",
-      "auto": "Automático"
-    },
-    "views": {
-      "list": "Resumen",
-      "statistic": "Estadísticas"
-    },
     "overview": {
       "title": "Resumen ({{amount}})",
       "1": "24 horas",
@@ -353,7 +344,7 @@
       }
     },
     "pushover": {
-      "title": "Pushover",
+      "title": "Presión",
       "fields": {
         "token": "App token",
         "user_key": "Clave de usuario",
@@ -386,7 +377,7 @@
       }
     },
     "webhook": {
-      "title": "Webhook",
+      "title": "Gancho web",
       "fields": {
         "url": "URL del webhook",
         "url_placeholder": "https://su-servidor.es/hook",
