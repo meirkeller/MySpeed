@@ -60,10 +60,10 @@
     "pause_tests": "Тестове за пауза",
     "resume_tests": "Продължи тестове",
     "language": "Промяна на езика",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Светлинен режим",
+    "dark_mode": "Тъмният режим",
+    "theme_switched_light": "Превключване в режим на светлина",
+    "theme_switched_dark": "Превключване в тъмен режим",
     "info": "Информация за проекта",
     "provider": "Щодо провайдера",
     "integrations": "Интеграции"
@@ -82,8 +82,8 @@
     }
   },
   "page": {
-    "overview": "Overview",
-    "statistics": "Statistics"
+    "overview": "Преглед",
+    "statistics": "Статистика"
   },
   "update": {
     "ping_title": "Задаване на оптимален ping (ms)",
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "В момента няма налични тестове",
     "no_latest": "Няма текущ тест. Моля, извършете тест или изчакайте да бъде извършен следващият тест.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Зареждане на още тестове...",
+    "no_more_tests": "Няма повече тестове за зареждане",
     "unknown_error": "Неизвестна грешка:",
     "failed": "Тестът е неуспешен",
     "recheck": "Моля, проверете, доколкото е възможно, дали това се случва по-често.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Върнете се в началото"
   }
 }
