@@ -60,10 +60,10 @@
     "pause_tests": "Pauzetests",
     "resume_tests": "Doorgaan met testen",
     "language": "Taal wijzigen",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Lichtmodus",
+    "dark_mode": "Donkere modus",
+    "theme_switched_light": "Overgeschakeld op lichtmodus",
+    "theme_switched_dark": "Overgeschakeld naar donkere modus",
     "info": "Info over het project",
     "provider": "Over de provider",
     "integrations": "Integraties"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Er zijn momenteel geen tests beschikbaar",
     "no_latest": "Er is geen huidige test. Voer een test uit of wacht tot de volgende test is uitgevoerd.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Meer tests laden...",
+    "no_more_tests": "Geen tests meer om te laden",
     "unknown_error": "Onbekende fout:",
     "failed": "Test mislukt",
     "recheck": "Controleer voor zover mogelijk of dit vaker gebeurt.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Terug naar boven"
   }
 }
