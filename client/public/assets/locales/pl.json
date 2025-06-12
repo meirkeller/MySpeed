@@ -60,17 +60,15 @@
     "pause_tests": "Wstrzymaj testy",
     "resume_tests": "Wznów testy",
     "language": "Zmień język",
+    "light_mode": "Light mode",
+    "dark_mode": "Dark mode",
+    "theme_switched_light": "Switched to light mode",
+    "theme_switched_dark": "Switched to dark mode",
     "info": "O projekcie",
     "provider": "O dostawcy",
     "integrations": "Integracje"
   },
   "options": {
-    "time": {
-      "24hours": "24 godziny (domyślnie)",
-      "2days": "2 dni (łącznie)",
-      "7days": "7 dni (średnio)",
-      "30days": "30 dni (średnio)"
-    },
     "cron": {
       "continuous": "Ciągły (co minutę)",
       "frequent": "Bardzo często (co 30 minut)",
@@ -201,6 +199,8 @@
   "test": {
     "not_available": "Obecnie nie ma dostępnych testów",
     "no_latest": "Nie ma aktualnie dostępnego testu. Wykonaj test lub poczekaj na kolejny.",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "Nieznany błąd:",
     "failed": "Test nie powiódł się",
     "recheck": "Sprawdź, czy to zdarza się często.",
@@ -282,7 +282,7 @@
     "preview_active": "Dodawanie i usuwanie serwerów jest wyłączone w trybie demo.",
     "placeholder": {
       "name": "Instancja MySpeed",
-      "url": "https://your-server.com"
+      "url": "https://your-server.pl"
     },
     "group": {
       "name": "Nazwa serwera",
@@ -317,7 +317,7 @@
     "discord": {
       "title": "Discord",
       "fields": {
-        "url": "Webhook-URL",
+        "url": "URL-webhook",
         "url_placeholder": "https://discord.com/api/webhooks/...",
         "display_name": "Nazwa wyświetlana",
         "display_name_placeholder": "Powiadomienie MySpeed",
@@ -379,7 +379,7 @@
     "webhook": {
       "title": "Webhook",
       "fields": {
-        "url": "Webhook-URL",
+        "url": "URL-webhook",
         "url_placeholder": "https://your-server.com/hook",
         "send_started": "Wyślij informację o rozpoczęciu",
         "send_failed": "Wyślij komunikaty o błędach",
@@ -389,5 +389,8 @@
         "send_config_updates": "Wyślij aktualizacje konfiguracji"
       }
     }
+
+  "common": {
+    "back_to_top": "Back to top"
   }
 }

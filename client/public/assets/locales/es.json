@@ -46,7 +46,6 @@
     "changes_applied": "Los cambios han sido guardados",
     "language_changed": "Se ha cambiado el idioma",
     "provider_changed": "Se ha cambiado el proveedor",
-    "view_changed": "Interfaz cambiada",
     "changes_unsaved": "Tus cambios no han sido aceptados. Comprueba los datos",
     "invalid": "Datos inválidos",
     "ping": "Ping óptimo",
@@ -61,18 +60,15 @@
     "pause_tests": "Pausar tests",
     "resume_tests": "Continuar tests",
     "language": "Cambiar de idioma",
-    "view": "Cambiar de interfaz",
+    "light_mode": "Light mode",
+    "dark_mode": "Dark mode",
+    "theme_switched_light": "Switched to light mode",
+    "theme_switched_dark": "Switched to dark mode",
     "info": "Información sobre el proyecto",
     "provider": "Acerca del proveedor",
     "integrations": "Integraciones"
   },
   "options": {
-    "time": {
-      "24hours": "24 horas (estándar)",
-      "2days": "2 días (total)",
-      "7days": "7 días (media)",
-      "30days": "30 días (media)"
-    },
     "cron": {
       "continuous": "Continuo (cada minuto)",
       "frequent": "Muy a menudo (cada 30 minutos)",
@@ -84,6 +80,10 @@
       "no_access": "Sin acceso",
       "read_access": "Acceso de sólo lectura"
     }
+  },
+  "page": {
+    "overview": "Visión general",
+    "statistics": "Estadísticas"
   },
   "update": {
     "ping_title": "Establecer ping óptimo (ms)",
@@ -131,7 +131,7 @@
     "speedtests": "Tests de velocidad",
     "configuration": "Configuración",
     "stored_tests": "Tests almacenados",
-    "tests": "Tests",
+    "tests": "Pruebas",
     "export_tests": "Exportar tests",
     "tests_exported": "Se han exportado los tests",
     "csv": "CSV",
@@ -199,6 +199,8 @@
   "test": {
     "not_available": "Actualmente no hay tests disponibles",
     "no_latest": "No hay ningun test en curso. Realice un test o espere hasta que se haya realizado el siguiente.",
+    "loading_more": "Loading more tests...",
+    "no_more_tests": "No more tests to load",
     "unknown_error": "Error desconocido:",
     "failed": "Test fallido",
     "recheck": "Por favor, compruebe en la medida de lo posible si esto ocurre más a menudo.",
@@ -255,7 +257,7 @@
       "title": "Tests fallidos",
       "success": "Exitoso",
       "failed": "Fallido",
-      "label": "Tests"
+      "label": "Pruebas"
     },
     "speed": {
       "title": "Velocidad"
@@ -396,5 +398,8 @@
         "send_config_updates": "Enviar actualizaciones de configuración"
       }
     }
+  },
+  "common": {
+    "back_to_top": "Back to top"
   }
 }
