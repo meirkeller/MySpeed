@@ -60,10 +60,10 @@
     "pause_tests": "Tests pausieren",
     "resume_tests": "Tests fortsetzen",
     "language": "Sprache ändern",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Heller Modus",
+    "dark_mode": "Dunkler Modus",
+    "theme_switched_light": "In den hellen Modus geschaltet",
+    "theme_switched_dark": "In den dunklen Modus geschaltet",
     "info": "Infos zum Projekt",
     "provider": "Über den Anbieter",
     "integrations": "Integrationen"
@@ -82,8 +82,8 @@
     }
   },
   "page": {
-    "overview": "Overview",
-    "statistics": "Statistics"
+    "overview": "Übersicht",
+    "statistics": "Statistik"
   },
   "update": {
     "ping_title": "Optimalen Ping setzen (ms)",
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Es liegen aktuell keine Tests vor",
     "no_latest": "Es liegt kein aktueller Test vor. Bitte führe einen Test durch oder warte, bis der nächste Test durchgeführt wurde.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Lade weitere Tests...",
+    "no_more_tests": "Keine Tests mehr zu laden",
     "unknown_error": "Unbekannter Fehler:",
     "failed": "Test fehlgeschlagen",
     "recheck": "Bitte überprüfe weitestgehend, ob das öfter passiert.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Zurück zum Anfang"
   }
 }
