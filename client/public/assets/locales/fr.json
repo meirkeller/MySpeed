@@ -60,10 +60,10 @@
     "pause_tests": "Mettre en pause les tests",
     "resume_tests": "Reprendre les tests",
     "language": "Changer de langue",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Mode lumière",
+    "dark_mode": "Mode sombre",
+    "theme_switched_light": "Passage en mode lumière",
+    "theme_switched_dark": "Passage en mode sombre",
     "info": "À propos du projet",
     "provider": "A propos du fournisseur",
     "integrations": "Intégrations"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Il n'y a actuellement aucun type disponible",
     "no_latest": "Il n'y a pas de test actuellement disponible. Veuillez effectuer un test ou attendre que le prochain test soit effectué.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Chargement d'autres tests...",
+    "no_more_tests": "Plus de tests à charger",
     "unknown_error": "Erreur inconnue :",
     "failed": "Échec du Test",
     "recheck": "Veuillez vérifier autant que possible si cela se produit souvent.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Retour en haut de la page"
   }
 }
