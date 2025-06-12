@@ -60,10 +60,10 @@
     "pause_tests": "Wstrzymaj testy",
     "resume_tests": "Wznów testy",
     "language": "Zmień język",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Tryb oświetlenia",
+    "dark_mode": "Tryb ciemny",
+    "theme_switched_light": "Przełączony na tryb oświetlenia",
+    "theme_switched_dark": "Przełączony na tryb ciemny",
     "info": "O projekcie",
     "provider": "O dostawcy",
     "integrations": "Integracje"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "Obecnie nie ma dostępnych testów",
     "no_latest": "Nie ma aktualnie dostępnego testu. Wykonaj test lub poczekaj na kolejny.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Załaduj więcej testów...",
+    "no_more_tests": "Nie musisz ładować więcej testów",
     "unknown_error": "Nieznany błąd:",
     "failed": "Test nie powiódł się",
     "recheck": "Sprawdź, czy to zdarza się często.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Powrót do góry"
   }
 }
