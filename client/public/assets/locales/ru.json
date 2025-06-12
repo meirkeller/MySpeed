@@ -60,10 +60,10 @@
     "pause_tests": "Приостановить тесты",
     "resume_tests": "Продолжить тесты",
     "language": "Изменить язык",
-    "light_mode": "Light mode",
-    "dark_mode": "Dark mode",
-    "theme_switched_light": "Switched to light mode",
-    "theme_switched_dark": "Switched to dark mode",
+    "light_mode": "Режим освещения",
+    "dark_mode": "Темный режим",
+    "theme_switched_light": "Переключился в режим освещения",
+    "theme_switched_dark": "Переключись в темный режим",
     "info": "Информация о проекте",
     "provider": "О провайдере",
     "integrations": "Интеграции"
@@ -199,8 +199,8 @@
   "test": {
     "not_available": "В настоящее время нет доступных тестов",
     "no_latest": "Текущий тест отсутствует. Пожалуйста, выполните тест или подождите, пока не будет выполнен следующий тест.",
-    "loading_more": "Loading more tests...",
-    "no_more_tests": "No more tests to load",
+    "loading_more": "Загрузи больше тестов...",
+    "no_more_tests": "Больше никаких тестов для загрузки",
     "unknown_error": "Неизвестная ошибка:",
     "failed": "Тест не прошел",
     "recheck": "Пожалуйста, проверьте, насколько это возможно, если такое случается чаще.",
@@ -391,6 +391,6 @@
     }
   },
   "common": {
-    "back_to_top": "Back to top"
+    "back_to_top": "Вернуться к началу"
   }
 }
