@@ -23,7 +23,7 @@
     "satori-html": "^0.3.2",
     "sequelize": "^6.37.7",
     "sqlite3": "^5.1.7",
-    "tmp": "^0.2.3"
+    "tmp": "^0.2.4"
   },
   "devDependencies": {
     "concurrently": "^9.2.0",
