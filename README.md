@@ -10,7 +10,7 @@
   <a href="https://github.com/gnmyt/myspeed">
     <img src="https://i.imgur.com/aCmA6rH.png" alt="Logo" width="80" height="80">
   </a>
-  <h3>MySpeed <a href="README.de.md">🇩🇪</a> <a href="README.md">🇺🇸</a></h3>
+  <h3>MySpeed</h3>
 </div>
 
 
