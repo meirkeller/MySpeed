@@ -1,17 +1,20 @@
 const recommendations = require('../models/Recommendations');
-const {triggerEvent} = require("./integrations");
+const { triggerEvent } = require('./integrations');
 
 module.exports.getCurrent = async () => {
-    return await recommendations.findOne();
-}
+  return await recommendations.findOne();
+};
 
 module.exports.update = async (ping, download, upload) => {
-    const configuration = {ping: Math.round(ping), download: parseFloat(download.toFixed(2)),
-        upload: parseFloat(upload.toFixed(2))};
-    
-    await recommendations.destroy({truncate: true});
+  const configuration = {
+    ping: Math.round(ping),
+    download: parseFloat(download.toFixed(2)),
+    upload: parseFloat(upload.toFixed(2)),
+  };
 
-    triggerEvent("recommendationsUpdated", configuration).then(() => {});
+  await recommendations.destroy({ truncate: true });
 
-    return recommendations.create(configuration);
-}
+  triggerEvent('recommendationsUpdated', configuration).then(() => {});
+
+  return recommendations.create(configuration);
+};

@@ -5,47 +5,54 @@ const promClient = require('prom-client');
 const config = require('../controller/config');
 const bcrypt = require('bcrypt');
 
-const pingGauge = new promClient.Gauge({name: 'myspeed_ping', help: 'Current ping in ms'});
-const downloadGauge = new promClient.Gauge({name: 'myspeed_download', help: 'Current download speed in Mbps'});
-const uploadGauge = new promClient.Gauge({name: 'myspeed_upload', help: 'Current upload speed in Mbps'});
-const currentServerGauge = new promClient.Gauge({name: 'myspeed_server', help: 'Current server ID',});
-const timeGauge = new promClient.Gauge({name: 'myspeed_time', help: 'Time of the test'});
+const pingGauge = new promClient.Gauge({ name: 'myspeed_ping', help: 'Current ping in ms' });
+const downloadGauge = new promClient.Gauge({
+  name: 'myspeed_download',
+  help: 'Current download speed in Mbps',
+});
+const uploadGauge = new promClient.Gauge({
+  name: 'myspeed_upload',
+  help: 'Current upload speed in Mbps',
+});
+const currentServerGauge = new promClient.Gauge({
+  name: 'myspeed_server',
+  help: 'Current server ID',
+});
+const timeGauge = new promClient.Gauge({ name: 'myspeed_time', help: 'Time of the test' });
 
 app.get('/metrics', async (req, res) => {
-    let passwordHash = await config.getValue("password");
+  let passwordHash = await config.getValue('password');
 
-    if (passwordHash !== "none") {
-        if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
-            res.setHeader('WWW-Authenticate', 'Basic realm="User Visible Realm"');
-            return res.status(401).end('Unauthorized');
-        }
-
-        const base64Credentials =  req.headers.authorization.split(' ')[1];
-        const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
-        const [username, password] = credentials.split(':');
-
-        if (username !== "prometheus" || !bcrypt.compareSync(password, passwordHash)) {
-            res.setHeader('WWW-Authenticate', 'Basic realm="User Visible Realm"');
-            return res.status(401).end('Unauthorized');
-        }
+  if (passwordHash !== 'none') {
+    if (!req.headers.authorization || req.headers.authorization.indexOf('Basic ') === -1) {
+      res.setHeader('WWW-Authenticate', 'Basic realm="User Visible Realm"');
+      return res.status(401).end('Unauthorized');
     }
 
-    const latest = await testController.getLatest();
-    if (!latest) return res.status(500).end('No test found');
+    const base64Credentials = req.headers.authorization.split(' ')[1];
+    const credentials = Buffer.from(base64Credentials, 'base64').toString('ascii');
+    const [username, password] = credentials.split(':');
 
-    if (latest.error || latest.ping === -1)
-        return res.status(500).end('Error in the latest test');
+    if (username !== 'prometheus' || !bcrypt.compareSync(password, passwordHash)) {
+      res.setHeader('WWW-Authenticate', 'Basic realm="User Visible Realm"');
+      return res.status(401).end('Unauthorized');
+    }
+  }
 
-    pingGauge.set(latest.ping);
-    downloadGauge.set(latest.download);
-    uploadGauge.set(latest.upload);
-    currentServerGauge.set(latest.serverId);
+  const latest = await testController.getLatest();
+  if (!latest) return res.status(500).end('No test found');
 
-    if (latest.time)
-        timeGauge.set(latest.time);
+  if (latest.error || latest.ping === -1) return res.status(500).end('Error in the latest test');
 
-    res.set('Content-Type', promClient.register.contentType);
-    res.end(await promClient.register.metrics());
+  pingGauge.set(latest.ping);
+  downloadGauge.set(latest.download);
+  uploadGauge.set(latest.upload);
+  currentServerGauge.set(latest.serverId);
+
+  if (latest.time) timeGauge.set(latest.time);
+
+  res.set('Content-Type', promClient.register.contentType);
+  res.end(await promClient.register.metrics());
 });
 
 module.exports = app;

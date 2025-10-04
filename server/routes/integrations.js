@@ -1,52 +1,57 @@
 const app = require('express').Router();
 const integrations = require('../controller/integrations');
 const password = require('../middlewares/password');
-const {validateInput} = require("../controller/integrations");
+const { validateInput } = require('../controller/integrations');
 
-app.get("/", password(false), (req, res) => res.json(integrations.getIntegrations()));
+app.get('/', password(false), (req, res) => res.json(integrations.getIntegrations()));
 
-app.get("/active", password(false), async (req, res) => res.json(await integrations.getActive()));
+app.get('/active', password(false), async (req, res) => res.json(await integrations.getActive()));
 
-app.put("/:integrationName", password(false), async (req, res) => {
-    const integration = integrations.getIntegration(req.params.integrationName);
-    if (!integration) return res.status(404).json({message: "Integration not found"});
+app.put('/:integrationName', password(false), async (req, res) => {
+  const integration = integrations.getIntegration(req.params.integrationName);
+  if (!integration) return res.status(404).json({ message: 'Integration not found' });
 
-    if (process.env.PREVIEW_MODE === "true")
-        return res.status(403).json({message: "For security reasons, you can't create integrations in preview mode"});
+  if (process.env.PREVIEW_MODE === 'true')
+    return res
+      .status(403)
+      .json({ message: "For security reasons, you can't create integrations in preview mode" });
 
-    if (!req.body) return res.status(400).json({message: "Missing data"});
+  if (!req.body) return res.status(400).json({ message: 'Missing data' });
 
-    const validatedInput = validateInput(req.params.integrationName, req.body);
-    if (!validatedInput) return res.status(400).json({message: "Invalid data"});
+  const validatedInput = validateInput(req.params.integrationName, req.body);
+  if (!validatedInput) return res.status(400).json({ message: 'Invalid data' });
 
-    const id = await integrations.create(req.params.integrationName, validatedInput);
-    return res.json({message: "Integration created", id});
+  const id = await integrations.create(req.params.integrationName, validatedInput);
+  return res.json({ message: 'Integration created', id });
 });
 
-app.patch("/:id", password(false), async (req, res) => {
-    if (!req.body) return res.status(400).json({message: "Missing data"});
+app.patch('/:id', password(false), async (req, res) => {
+  if (!req.body) return res.status(400).json({ message: 'Missing data' });
 
-    if (process.env.PREVIEW_MODE === "true")
-        return res.status(403).json({message: "For security reasons, you can't update integrations in preview mode"});
+  if (process.env.PREVIEW_MODE === 'true')
+    return res
+      .status(403)
+      .json({ message: "For security reasons, you can't update integrations in preview mode" });
 
-    const integration = await integrations.getIntegrationById(req.params.id);
-    if (!integration) return res.status(404).json({message: "Integration not found"});
+  const integration = await integrations.getIntegrationById(req.params.id);
+  if (!integration) return res.status(404).json({ message: 'Integration not found' });
 
-    const validatedInput = validateInput(integration?.name, req.body);
-    if (!validatedInput) return res.status(400).json({message: "Invalid data"});
+  const validatedInput = validateInput(integration?.name, req.body);
+  if (!validatedInput) return res.status(400).json({ message: 'Invalid data' });
 
-    await integrations.patch(req.params.id, validatedInput);
-    return res.json({message: "Integration updated"});
+  await integrations.patch(req.params.id, validatedInput);
+  return res.json({ message: 'Integration updated' });
 });
 
-app.delete("/:id", password(false), async (req, res) => {
-    if (process.env.PREVIEW_MODE === "true")
-        return res.status(403).json({message: "For security reasons, you can't delete integrations in preview mode"});
+app.delete('/:id', password(false), async (req, res) => {
+  if (process.env.PREVIEW_MODE === 'true')
+    return res
+      .status(403)
+      .json({ message: "For security reasons, you can't delete integrations in preview mode" });
 
-    const result = await integrations.delete(req.params.id);
-    if (result === null) return res.status(404).json({message: "Integration not found"});
-    return res.json({message: "Integration deleted"});
+  const result = await integrations.delete(req.params.id);
+  if (result === null) return res.status(404).json({ message: 'Integration not found' });
+  return res.json({ message: 'Integration deleted' });
 });
-
 
 module.exports = app;

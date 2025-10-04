@@ -1,17 +1,21 @@
 const Sequelize = require('sequelize');
-const db = require("../config/database");
+const db = require('../config/database');
 
-module.exports = db.define("nodes", {
+module.exports = db.define(
+  'nodes',
+  {
     name: {
-        type: Sequelize.STRING,
-        defaultValue: "MySpeed Server"
+      type: Sequelize.STRING,
+      defaultValue: 'MySpeed Server',
     },
     url: {
-        type: Sequelize.STRING,
-        allowNull: false
+      type: Sequelize.STRING,
+      allowNull: false,
     },
     password: {
-        type: Sequelize.STRING,
-        allowNull: true
-    }
-}, {createdAt: false, updatedAt: false});
+      type: Sequelize.STRING,
+      allowNull: true,
+    },
+  },
+  { createdAt: false, updatedAt: false },
+);

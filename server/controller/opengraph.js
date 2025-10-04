@@ -1,34 +1,32 @@
-const fs = require("fs");
-const resvg = require("@resvg/resvg-js").Resvg;
-const moment = require("moment-timezone");
-const tests = require("../controller/speedtests");
-const axios = require("axios");
+const fs = require('fs');
+const resvg = require('@resvg/resvg-js').Resvg;
+const moment = require('moment-timezone');
+const tests = require('../controller/speedtests');
+const axios = require('axios');
 
 async function generateOpenGraphImage(req) {
   const test = await tests.listStatistics(1);
 
   if (!test.download.avg || !test.upload.avg || !test.ping.avg) {
-    throw new Error("Error fetching OpenGraph data");
+    throw new Error('Error fetching OpenGraph data');
   }
 
-  const fontPath = "/assets/fonts/inter-v12-latin-regular.ttf";
+  const fontPath = '/assets/fonts/inter-v12-latin-regular.ttf';
 
   const font =
-    process.env.NODE_ENV === "production"
+    process.env.NODE_ENV === 'production'
       ? (await axios.get(`${req.protocol}://${req.hostname}${fontPath}`)).data
       : await fs.promises.readFile(`client/public${fontPath}`);
 
-  const html = (await import("satori-html")).html;
-  const satori = (await import("satori")).default;
+  const html = (await import('satori-html')).html;
+  const satori = (await import('satori')).default;
 
   const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-  const date = moment().tz(timeZone).format("MM/DD/YYYY");
-  const time = moment().tz(timeZone).format("h:mm A z");
+  const date = moment().tz(timeZone).format('MM/DD/YYYY');
+  const time = moment().tz(timeZone).format('h:mm A z');
 
   const markup = html`
-    <div
-      tw="bg-[#1d2332] text-white rounded-lg w-full h-full flex flex-col p-16 justify-between"
-    >
+    <div tw="bg-[#1d2332] text-white rounded-lg w-full h-full flex flex-col p-16 justify-between">
       <div tw="w-full flex-row flex justify-between items-center">
         <div tw="flex flex-row items-center -mt-4">
           <div tw="h-full items-start flex">
@@ -54,17 +52,10 @@ async function generateOpenGraphImage(req) {
         <div tw="flex flex-row h-full">
           <div tw="flex flex-col h-full justify-around items-end pr-1">
             <p tw="text-4xl  leading-[30px] text-slate-500 m-0 p-0">${date}</p>
-            <span tw="text-4xl  leading-[30px] text-slate-500 m-0 p-0">
-              ${time}
-            </span>
+            <span tw="text-4xl  leading-[30px] text-slate-500 m-0 p-0"> ${time} </span>
           </div>
           <div tw="flex h-[100px] w-[100px] mr-[50px]">
-            <img
-              tw="-mt-[50px]"
-              height="200"
-              width="200"
-              src="https://i.imgur.com/aCmA6rH.png"
-            />
+            <img tw="-mt-[50px]" height="200" width="200" src="https://i.imgur.com/aCmA6rH.png" />
           </div>
         </div>
       </div>
@@ -92,9 +83,7 @@ async function generateOpenGraphImage(req) {
               <p tw="text-4xl m-0 p-0 text-slate-500 ml-1">Mbps</p>
             </div>
           </div>
-          <p tw="text-[160px] font-bold m-0 p-0">
-            ${String(test.download.avg)}
-          </p>
+          <p tw="text-[160px] font-bold m-0 p-0">${String(test.download.avg)}</p>
         </div>
         <div tw="flex flex-col items-end">
           <div tw="flex flex-row items-center">
@@ -119,9 +108,7 @@ async function generateOpenGraphImage(req) {
               <p tw="text-4xl m-0 p-0 text-slate-500 ml-1">Mbps</p>
             </div>
           </div>
-          <p tw="text-[160px] font-bold m-0 -mr-5 p-0">
-            ${String(test.upload.avg)}
-          </p>
+          <p tw="text-[160px] font-bold m-0 -mr-5 p-0">${String(test.upload.avg)}</p>
         </div>
       </div>
       <div tw="w-full flex-row flex justify-end mt-4">
@@ -157,10 +144,10 @@ async function generateOpenGraphImage(req) {
     height: 600,
     fonts: [
       {
-        name: "Inter",
+        name: 'Inter',
         data: font,
         weight: 400,
-        style: "normal",
+        style: 'normal',
       },
     ],
   });
