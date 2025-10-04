@@ -13,7 +13,8 @@ export default [
       parserOptions: {
         // project: ['./tsconfig.json', './test/tsconfig.json'],
         ecmaVersion: 2024,
-        sourceType: 'module',
+        // sourceType: 'module',
+        sourceType: 'commonjs',
       },
       globals: {
         require: 'readonly',
