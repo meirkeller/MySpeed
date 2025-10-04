@@ -1,4 +1,4 @@
-FROM node:22-alpine AS build
+FROM node:24-alpine AS build
 RUN apk add --no-cache g++ make cmake python3 py3-setuptools
 
 WORKDIR /myspeed
@@ -7,12 +7,12 @@ COPY ./client ./client
 COPY ./server ./server
 COPY ./package.json ./package.json
 
-RUN yarn install
-RUN cd client && yarn install --force
+RUN npm install
+RUN cd client && npm install
 RUN npm run build
 RUN mv /myspeed/client/build /myspeed
 
-FROM node:22-alpine
+FROM node:24-alpine
 
 RUN apk add --no-cache tzdata
 
